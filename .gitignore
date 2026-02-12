@@ -1,4 +1,6 @@
 node_modules/
 db/prompts.db
+db/prompts.db-shm
+db/prompts.db-wal
 client/dist/
 .DS_Store
