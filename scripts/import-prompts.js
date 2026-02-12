@@ -223,15 +223,31 @@ const importAll = db.transaction(() => {
   console.log('Importing Plumbing/Residential...');
   const pr = importDirectory(join(ROOT, 'Plumbing', 'Residential'), 'plumbing', 'residential');
 
+  console.log('Importing Plumbing/Commercial...');
+  const pc = importDirectory(join(ROOT, 'Plumbing', 'Commercial'), 'plumbing', 'commercial');
+
+  console.log('Importing Plumbing/Greeting_Residential...');
+  const pgr = importDirectory(join(ROOT, 'Plumbing', 'Greeting_Residential'), 'plumbing', 'greeting_residential');
+
+  console.log('Importing Plumbing/Greeting_Commercial...');
+  const pgc = importDirectory(join(ROOT, 'Plumbing', 'Greeting_Commercial'), 'plumbing', 'greeting_commercial');
+
+  console.log('Importing Plumbing/Studio_Portraits...');
+  const psp = importDirectory(join(ROOT, 'Plumbing', 'Studio_Portraits'), 'plumbing', 'studio_portraits');
+
   console.log('Importing Documentation/plumbing_prompt_library.md...');
   const dl = importDocLibrary(join(ROOT, 'Documentation', 'plumbing_prompt_library.md'), 'plumbing', 'residential');
 
   console.log('\n--- Import Summary ---');
-  console.log(`Electrician/Residential: ${er} prompts`);
-  console.log(`Electrician/Commercial:  ${ec} prompts`);
-  console.log(`Plumbing/Residential:    ${pr} prompts`);
-  console.log(`Documentation library:   ${dl} prompts`);
-  console.log(`Total:                   ${er + ec + pr + dl} prompts`);
+  console.log(`Electrician/Residential:       ${er} prompts`);
+  console.log(`Electrician/Commercial:        ${ec} prompts`);
+  console.log(`Plumbing/Residential:          ${pr} prompts`);
+  console.log(`Plumbing/Commercial:           ${pc} prompts`);
+  console.log(`Plumbing/Greeting_Residential: ${pgr} prompts`);
+  console.log(`Plumbing/Greeting_Commercial:  ${pgc} prompts`);
+  console.log(`Plumbing/Studio_Portraits:     ${psp} prompts`);
+  console.log(`Documentation library:         ${dl} prompts`);
+  console.log(`Total:                         ${er + ec + pr + pc + pgr + pgc + psp + dl} prompts`);
 });
 
 importAll();
