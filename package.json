@@ -1,0 +1,23 @@
+{
+  "name": "prompt-packs",
+  "version": "1.0.0",
+  "description": "Database and management tool for text-to-image prompt packs",
+  "type": "module",
+  "scripts": {
+    "db:init": "node scripts/init-db.js",
+    "db:import": "node scripts/import-prompts.js",
+    "db:setup": "npm run db:init && npm run db:import",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix client run build"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+db/prompts.db
+client/dist/
+.DS_Store
